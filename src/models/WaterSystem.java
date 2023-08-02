@@ -1,25 +1,25 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class WaterSystem {
 
-    private List<WaterResource> waterResources;
-    private List<SanitationFacility> sanitationFacilities;
+    private static ArrayList<WaterResource> waterResources = new ArrayList<WaterResource>(); ;
+    private  static ArrayList<SanitationFacility> sanitationFacilities = new ArrayList<SanitationFacility>();
 
-    public WaterSystem() {
-        waterResources = new ArrayList<>();  // Initialize the list of water resources
-        sanitationFacilities = new ArrayList<>();  // Initialize the list of sanitation facilities
-    }
+//    public WaterSystem() {
+//        waterResources =  // Initialize the list of water resources
+//        sanitationFacilities = new ArrayList<>();  // Initialize the list of sanitation facilities
+//    }
 
     // Add a water resource to the system
-    public void addWaterResource(WaterResource resource) {
+    public static void addWaterResource(WaterResource resource) {
         waterResources.add(resource);
     }
 
     // Add a sanitation facility to the system
-    public void addSanitationFacility(SanitationFacility facility) {
+    public static void addSanitationFacility(SanitationFacility facility) {
         sanitationFacilities.add(facility);
     }
 
@@ -33,6 +33,14 @@ public class WaterSystem {
     public int getSanitationFacilityCount() {
 
         return sanitationFacilities.size();
+    }
+
+    public static ArrayList<WaterResource> getWaterResources() {
+        return waterResources;
+    }
+
+    public static ArrayList<SanitationFacility> getSanitationFacilities() {
+        return sanitationFacilities;
     }
 }
 
